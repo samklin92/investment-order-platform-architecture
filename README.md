@@ -1,50 +1,71 @@
-\# Investment Order Service — High Level Architecture
+# Investment Order Platform Architecture
 
-> Highly available, secure, scalable, and fault-tolerant
+Production-grade cloud-native architecture for a highly available financial investment order platform designed with Kubernetes, Terraform, AWS, observability, disaster recovery, and multi-AZ resilience.
 
+---
 
+# Architecture Diagram
 
-\## Architecture Diagram
-
-!\[Investment Order Service - High Level Architecture](./architecture/AWS%20investment%20order%20service%20architecture.png)
-
-
-
-\## Structure
-
-investment-order-platform-architecture/
-
-├── architecture/        # Architecture diagrams and specs
-
-├── docs/                # Documentation
-
-├── kubernetes/          # Kubernetes manifests
-
-├── observability/       # Monitoring and alerting configs
-
-└── terraform/           # Infrastructure as Code
-
-## Non-Functional Requirements
-
-\- \*\*Availability:\*\* 99.95% uptime
-
-\- \*\*Scalability:\*\* Auto-scale based on load
-
-\- \*\*Durability:\*\* No data loss (RPO ≤ 5 min)
-
-\- \*\*Latency:\*\* P99 < 150ms
-
-\- \*\*Security:\*\* End-to-end encryption
-
-\- \*\*Compliance:\*\* Audit logs, data retention
+<img width="1536" height="1024" alt="AWS investment order service architecture" src="https://github.com/user-attachments/assets/deb89ad5-ea13-4be1-a1d8-005b3e1d243c" />
 
 
+---
 
-\## Tech Stack
+# Key Features
 
-AWS · EKS · Terraform · Aurora PostgreSQL · ElastiCache Redis · 
+- Multi-AZ Kubernetes deployment
+- PostgreSQL RDS with automatic failover
+- Redis replication and persistence
+- Horizontal Pod Autoscaling
+- Disaster recovery strategy
+- Observability with Prometheus/Grafana
+- Secure secret management
+- GitOps-ready deployment workflow
 
-Amazon SQS · SNS · CloudFront · WAF · API Gateway · 
+---
 
-Prometheus · Grafana · AWS X-Ray · Amazon OpenSearch
+# Reliability Targets
+
+| Objective | Target |
+|---|---|
+| Availability | 99.95% |
+| P99 Latency | < 1 second |
+| RPO | ≤ 5 minutes |
+| RTO | ≤ 30 minutes |
+
+---
+
+# Technology Stack
+
+- AWS EKS
+- Terraform
+- PostgreSQL RDS
+- Redis
+- Kubernetes
+- Prometheus + Grafana
+- GitHub Actions
+- OpenTelemetry
+
+---
+
+# Project Goals
+
+This project demonstrates production-grade infrastructure design principles for a mission-critical financial platform including:
+
+- High availability
+- Fault tolerance
+- Scalability
+- Observability
+- Disaster recovery
+- Security best practices
+
+---
+
+# Future Improvements
+
+- GitOps with ArgoCD
+- Service mesh integration
+- Multi-region active-active deployment
+- Chaos engineering testing
+
 
